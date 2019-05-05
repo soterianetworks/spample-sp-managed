@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6")
+    }
+}
+
+apply plugin: 'org.sonarqube'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}")
+
+    compile project(":core")
+}
+
+sonarqube {
+
+    String regex = "(.*)/(.*)"
+    String projectKey = project.name.replaceAll(regex, "\$1:\$2")
+
+    properties {
+        property "sonar.projectKey", "$projectKey"
+        property "sonar.sources", "$projectDir/src/main/java"
+        property "sonar.host.url", "http://127.0.0.1:9000/"
+        property "sonar.login", "admin"
+        property "sonar.password", "admin"
+    }
+
+}

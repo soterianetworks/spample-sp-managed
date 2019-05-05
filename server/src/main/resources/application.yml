@@ -1,0 +1,34 @@
+server:
+  port: 80
+
+security:
+  basic:
+    enabled: false
+
+spring:
+  mvc:
+    date-format: yyyy-MM-dd
+    favicon:
+      enabled: false
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.sss'Z'
+    serialization:
+      write-dates-as-timestamps: true
+  jpa:
+    show-sql: ${JPA_SHOW_SQL:false}
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: ${JPA_DIALECT:org.hibernate.dialect.MySQL5Dialect}
+      javax:
+        persistence:
+          query:
+            timeout: 300000
+  profiles:
+    active: production

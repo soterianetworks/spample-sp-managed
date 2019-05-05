@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spample
+
+logging:
+  file: spample
+  level:
+    root: INFO
+    com.soterianetworks.spample: DEBUG

@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/sample?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true}
+    driver-class-name: ${DB_DRIVER:com.mysql.jdbc.Driver}
+    username: ${DB_USER:spample}
+    password: ${DB_PASSWORD:spample-password}
+    test-while-idle: true
+    validation-query: SELECT 1 FROM DUAL
+    test-on-borrow: true
+  devtools:
+    remote:
+      secret: sundra_secret
+  websocket:
+    allowedOrigins: ${ALLOW_ORIGINS:localhost}
+
+oauth2:
+  check_token:
+    url: ${OAUTH2_CHECK_TOKEN_URL:http://dev.penroz.com/oauth/check_token}
+  client:
+    id: ${OAUTH2_CLIENT_ID:sundra-websocket}
+    secret: ${OAUTH2_CLIENT_SECRET:sundra-websocket-secret}
+
+server:
+  port: 8081
+
+logging:
+  level:
+    root: INFO
+    com.netflix.hystrix: WARN
+    com.soterianetworks.spample: DEBUG

@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url:  ${DB_URL:jdbc:mysql://127.0.0.1:3306/spample?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true}
+    driver-class-name: ${DB_DRIVER:com.mysql.jdbc.Driver}
+    username:  ${DB_USER:spample}
+    password:  ${DB_PASSWORD:spample-password}

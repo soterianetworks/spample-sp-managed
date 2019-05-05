@@ -1,0 +1,10 @@
+ext {
+    springBootVersion = "1.5.4.RELEASE"
+    springCloudVersion = "Dalston.SR1"
+    pojomaticVersion = "2.0.1"
+    jacksonVersion = "2.4.0"
+    jacksonCodehausVersion = "1.9.13"
+    commonsLangVersion = "2.6"
+    mysqlConnectorVersion="5.1.37"
+}
+
