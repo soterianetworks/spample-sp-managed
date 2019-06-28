@@ -1,7 +1,0 @@
-logging:
-  file: ${LOG_FILE:spample}
-  level:
-    root: ${LOG_LEVEL:INFO}
-    com.soterianetworks.spample: ${LOG_LEVEL_APP:DEBUG}
-  maxFileSize: ${LOG_MAX_FILE_SIZE:10}
-  totalSizeCap: ${LOG_TOTAL_SIZE_CAP:100}
